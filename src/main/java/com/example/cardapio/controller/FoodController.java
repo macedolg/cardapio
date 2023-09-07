@@ -16,6 +16,7 @@ public class FoodController {
     @Autowired
     FoodRepository foodRepository;
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping
     public void saveFood(@RequestBody FoodRequestDTO data){
         Food foodData = new Food(data);
@@ -23,6 +24,7 @@ public class FoodController {
         return;
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
     public List<FoodResponseDTO> getAll(){
 
